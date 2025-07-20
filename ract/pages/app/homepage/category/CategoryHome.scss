@@ -1,0 +1,158 @@
+/*-----------------------------------*\
+#CATEGORY
+\*-----------------------------------*/
+
+.iframequestion {
+    width: 100%;
+    // height: 100%;
+}
+
+.category {
+    .container {
+        .section-subtitle {
+            color: var(--radical-red);
+        }
+
+        .section-title {
+            --color: var(--kappel);
+        }
+
+        .section-text {
+            margin-block-end: 40px;
+        }
+
+        li {
+            .category-card {
+                .card-text {
+                    color: var(--eerie-black-1);
+                    font-size: var(--fs-5);
+                    margin-block: 15px 25px;
+                }
+            }
+        }
+
+        li:nth-child(1) .category-card,
+        .slideli:nth-child(1) .category-card {
+            background-color: hsla(170, 75%, 41%, 0.1);
+
+            .card-icon {
+                background-color: hsla(170, 75%, 41%, 0.1);
+            }
+
+            .card-badge {
+                background-color: hsla(170, 75%, 41%, 0.1);
+                color: hsla(170, 75%, 41%);
+            }
+        }
+
+        li:nth-child(2) .category-card,
+        .slideli:nth-child(2) .category-card {
+            background-color: hsla(351, 83%, 61%, 0.1);
+
+            .card-icon {
+                background-color: hsla(351, 83%, 61%, 0.1);
+            }
+
+            .card-badge {
+                background-color: hsla(351, 83%, 61%, 0.1);
+                color: hsla(351, 83%, 61%);
+            }
+        }
+
+        li:nth-child(3) .category-card,
+        .slideli:nth-child(3) .category-card {
+            background-color: hsla(229, 75%, 58%, 0.1);
+
+            .card-icon {
+                background-color: hsla(229, 75%, 58%, 0.1);
+            }
+
+            .card-badge {
+                background-color: hsla(229, 75%, 58%, 0.1);
+                color: hsla(229, 75%, 58%);
+            }
+        }
+
+        li:nth-child(4) .category-card,
+        .slideli:nth-child(4) .category-card {
+            background-color: hsla(42, 94%, 55%, 0.1);
+
+            .card-icon {
+                background-color: hsla(42, 94%, 55%, 0.1);
+            }
+
+            .card-badge {
+                background-color: hsla(42, 94%, 55%, 0.1);
+                color: hsla(42, 94%, 55%);
+            }
+        }
+
+        li:nth-child(5) .category-card,
+        .slideli:nth-child(5) .category-card {
+            background-color: hsla(170, 75%, 41%, 0.1);
+
+            .card-icon {
+                background-color: hsla(170, 75%, 41%, 0.1);
+            }
+
+            .card-badge {
+                background-color: hsla(170, 75%, 41%, 0.1);
+                color: hsla(170, 75%, 41%);
+            }
+        }
+
+        li:nth-child(6) .category-card,
+        .slideli:nth-child(6) .category-card {
+            background-color: hsla(351, 83%, 61%, 0.1);
+
+            .card-icon {
+                background-color: hsla(351, 83%, 61%, 0.1);
+            }
+
+            .card-badge {
+                background-color: hsla(351, 83%, 61%, 0.1);
+                color: hsla(351, 83%, 61%);
+            }
+        }
+
+        li:nth-child(7) .category-card,
+        .slideli:nth-child(7) .category-card {
+            background-color: hsla(229, 75%, 58%, 0.1);
+
+            .card-icon {
+                background-color: hsla(229, 75%, 58%, 0.1);
+            }
+
+            .card-badge {
+                background-color: hsla(229, 75%, 58%, 0.1);
+                color: hsla(229, 75%, 58%);
+            }
+        }
+
+        li:nth-child(8) .category-card,
+        .slideli:nth-child(8) .category-card {
+            background-color: hsla(42, 94%, 55%, 0.1);
+
+            .card-icon {
+                background-color: hsla(42, 94%, 55%, 0.1);
+            }
+
+            .card-badge {
+                background-color: hsla(42, 94%, 55%, 0.1);
+                color: hsla(42, 94%, 55%);
+            }
+        }
+    }
+}
+
+.swiper {
+    // .swiper-button-prev,
+    // .swiper-button-next {
+    //     display: none;
+    // }
+
+    .swiper-pagination-bullet {
+        width: 16px;
+        height: 16px;
+    }
+}

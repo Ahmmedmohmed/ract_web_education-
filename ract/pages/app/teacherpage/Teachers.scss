@@ -1,0 +1,161 @@
+/* Start Our teachers */
+.teachers {
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+
+    .container {
+        .teachersbox {
+            padding-top: var(--padding-top);
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+            gap: 30px;
+
+            @media (max-width: 767px) {
+                grid-template-columns: 1fr;
+            }
+
+            .teachearbox {
+                background-color: white;
+                box-shadow: 0 2px 4px #08314469;
+                border-radius: 7px;
+                padding: 17px;
+                cursor: pointer;
+                transition: var(--main-transition);
+
+                &:hover {
+                    background-color: var(--secondery-color);
+                    box-shadow: 0 2px 4px #ec00ff;
+                    color: white;
+                }
+
+                .teachercontent {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    @media (max-width: 767px) {
+                        flex-direction: column;
+                        text-align: center;
+                    }
+
+                    .teacherImage {
+                        img {
+                            width: 130px;
+                            border: 3px solid var(--secondery-color);
+                            border-radius: 35px;
+
+                            @media (max-width: 767px) {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .teacherInfo {
+                        margin-right: 20px;
+
+                        @media (max-width: 767px) {
+                            margin-top: 10px;
+                        }
+
+                        h3 {
+                            font-size: 18px;
+                            margin-bottom: 10px;
+
+                            @media (max-width: 767px) {
+                                font-size: 15px;
+                            }
+                        }
+
+                        p {
+                            color: var(--thrid-color);
+                            line-height: 1.8;
+                            font-size: 15px;
+                            font-weight: 500;
+
+                            @media (max-width: 767px) {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+
+                &:hover .teacherImage img {
+                    border-color: white;
+                }
+
+                .teachersContect {
+                    margin-top: 15px;
+                    border-top: 1px solid var(--main-color);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .group h3,
+                    .teacherContact h3 {
+                        font-size: 16px;
+                        margin-top: 10px;
+
+                        @media (max-width: 767px) {
+                            font-size: 12px;
+                        }
+                    }
+
+                    .group {
+                        p {
+                            font-size: 15px;
+                            color: var(--thrid-color);
+
+                            @media (max-width: 767px) {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+
+                    .teacherContact {
+                        margin: 0 auto;
+
+                        .social {
+                            svg {
+                                margin-right: 10px;
+                                font-size: 20px;
+                                color: var(--secondery-color);
+                                transition: var(--main-transition);
+
+                                @media (max-width: 767px) {
+                                    font-size: 14px;
+                                }
+
+                                &:hover {
+                                    transform: scale(1.2);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:hover .group h3,
+                &:hover .teacherContact h3 {
+                    color: white;
+                }
+
+                &:hover .title::before {
+                    background-color: var(--main-color);
+                }
+
+                &:hover .group p {
+                    color: white;
+                }
+
+                &:hover .teacherContact .social svg {
+                    color: white;
+                }
+            }
+
+            &:hover p {
+                color: white;
+            }
+        }
+    }
+}
+
+/* End Our teachers */

@@ -1,0 +1,101 @@
+.suggestion-card {
+    // transition: var(--main-transition);
+
+    // &:is(:hover, :focus-within) .card-banner .img-cover {
+    //     transform: scale(1.1);
+    // }
+
+    // &:is(:hover, :focus-within) .card-banner::after {
+    //     opacity: 1;
+    // }
+
+    // // .blog .container .grid-list & .card-content .card-btn
+    // &:is(:hover, :focus-within) .card-content .card-btn {
+    //     opacity: 1;
+    //     transform: translateY(10px);
+    // }
+
+    .card-banner {
+        border-radius: var(--radius-10);
+        height: 300px;
+
+        // &::after {
+        //     inset: 0;
+        //     background-color: var(--black_50);
+        //     opacity: 0;
+        //     transition: var(--transition-1);
+        // }
+
+        .img-cover {
+            transition: var(--transition-2);
+        }
+    }
+
+    .card-content {
+        // position: relative;
+        // margin-inline: 15px;
+        // background-color: var(--white);
+        // padding: 20px;
+        // border-radius: var(--radius-10);
+        // box-shadow: var(--shadow-3);
+        // margin-block-start: -10px;
+        // z-index: 1;
+
+        // .card-btn {
+        //     position: absolute;
+        //     top: -0px;
+        //     left: 30px;
+        //     background-color: var(--kappel);
+        //     color: var(--white);
+        //     font-size: 20px;
+        //     padding: 20px;
+        //     border-radius: var(--radius-circle);
+        //     transition: var(--main-transition);
+        //     opacity: 0;
+
+        //     &:is(:hover, :focus) {
+        //         background-color: var(--radical-red);
+        //     }
+        // }
+
+        // .card-subtitle {
+        //     text-transform: uppercase;
+        //     font-size: var(--fs-5);
+        // }
+
+        // .card-title {
+        //     margin-block: 20px 15px;
+        //     transition: var(--main-transition);
+
+        //     &:is(:hover, :focus) {
+        //         color: var(--kappel);
+        //     }
+        // }
+
+        // .card-meta-list {
+        //     display: flex;
+        //     flex-wrap: wrap;
+        //     gap: 10px 20px;
+        //     margin-block-end: 20px;
+
+        //     .card-meta-item {
+        //         display: flex;
+        //         font-size: var(--fs-5);
+        //         gap: 10px;
+        //         align-items: center;
+        //         color: var(--eerie-black-1);
+
+        //         ion-icon,
+        //         svg {
+        //             color: var(--kappel);
+        //             font-size: 18px;
+        //             --ionicon-stroke-width: 40px;
+        //         }
+        //     }
+        // }
+
+        // .card-text {
+        //     font-size: var(--fs-5);
+        // }
+    }
+}

@@ -1,0 +1,30 @@
+.notfound {
+    // min-height: calc(100vh - 150px);
+    padding: 120px 0 50px;
+
+    .container {
+        // padding-top: var(--padding-sc);
+        padding-bottom: 50px;
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            @media (max-width: 767px) {
+                flex-direction: column;
+            }
+
+            > div {
+                padding: 5rem 0rem;
+
+                img {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    max-height: 400px;
+                }
+            }
+        }
+    }
+}

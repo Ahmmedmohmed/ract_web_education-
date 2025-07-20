@@ -1,0 +1,62 @@
+/*-----------------------------------*\
+#STATS
+\*-----------------------------------*/
+
+.stats {
+    // li {
+    //     min-height: 100%;
+
+    //     .stats-card {
+    //         min-height: 100%;
+    //         text-align: center;
+    //         padding: 25px;
+    //         border-radius: var(--radius-10);
+
+    //         & :is(.card-title, .card-text) {
+    //             font-family: var(--ff-league_spartan);
+    //         }
+
+    //         @media (min-width: 575px) {
+    //             padding: 40px 30px;
+    //         }
+
+    //         .card-title {
+    //             color: hsl(var(--color));
+    //             font-size: var(--fs-2);
+    //             line-height: 1.1;
+    //             font-weight: bolder;
+    //         }
+
+    //         .card-text {
+    //             color: var(--eerie-black-1);
+    //             text-transform: uppercase;
+    //         }
+    //     }
+    // }
+
+    li:nth-child(1) .stats-card {
+        background-color: hsla(170, 75%, 41%, 0.1);
+
+        .card-title {
+            color: hsla(170, 75%, 41%);
+        }
+    }
+    li:nth-child(2) .stats-card {
+        background-color: hsla(351, 83%, 61%, 0.1);
+        .card-title {
+            color: hsla(351, 83%, 61%);
+        }
+    }
+    li:nth-child(3) .stats-card {
+        background-color: hsla(229, 75%, 58%, 0.1);
+        .card-title {
+            color: hsla(229, 75%, 58%);
+        }
+    }
+    li:nth-child(4) .stats-card {
+        background-color: hsla(42, 94%, 55%, 0.1);
+        .card-title {
+            color: hsla(42, 94%, 55%);
+        }
+    }
+}

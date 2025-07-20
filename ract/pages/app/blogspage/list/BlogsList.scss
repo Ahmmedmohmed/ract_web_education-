@@ -1,0 +1,232 @@
+.blogs-list {
+    // --section-padding: 60px;
+    // padding-block: var(--section-padding);
+    background: var(--back-sec-1);
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+    }
+
+    .blogs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+
+        .blog-card {
+            background-color: var(--back-box);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: 0.3s;
+
+            &:hover {
+                transform: translateY(-10px);
+            }
+
+            .card-img {
+                position: relative;
+                height: 240px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .img-overlay {
+                    position: absolute;
+                    inset: 0;
+                    background-color: rgba(0, 0, 0, 0.3);
+                    transition: 0.3s;
+                }
+
+                &:hover .img-overlay {
+                    opacity: 0;
+                }
+
+                .category-tag {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    background-color: var(--primary);
+                    color: #fff;
+                    padding: 5px 15px;
+                    border-radius: 50px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    z-index: 1;
+                }
+            }
+
+            .card-content {
+                padding: 25px;
+                text-align: right;
+                direction: rtl;
+
+                .card-title {
+                    font-size: 22px;
+                    font-weight: 700;
+                    margin-bottom: 15px;
+                    line-height: 1.4;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: var(--primary);
+                    }
+                }
+
+                .card-text {
+                    color: var(--text-color);
+                    margin-bottom: 20px;
+                    line-height: 1.6;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+
+                .card-meta {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                    .comments {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        color: var(--text-muted);
+
+                        ion-icon {
+                            font-size: 18px;
+                        }
+                    }
+
+                    .date {
+                        color: var(--text-muted);
+                    }
+                }
+
+                .card-footer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .read-more {
+                        display: flex;
+                        align-items: center;
+                        color: var(--primary);
+                        font-weight: 600;
+                        transition: 0.3s;
+
+                        svg {
+                            margin-right: 5px;
+                        }
+
+                        &:hover {
+                            color: var(--primary-dark);
+                        }
+                    }
+
+                    .author {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        .avatar {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .name {
+                            font-size: 14px;
+                            color: var(--text-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Pagination styles for both BlogHome and BlogsList */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+
+    .pagination-btn {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--radius-circle);
+        background-color: var(--white);
+        color: var(--kappel);
+        border: 1px solid var(--kappel);
+        font-weight: var(--fw-600);
+        transition: var(--transition-1);
+        cursor: pointer;
+        box-shadow: var(--shadow-1);
+
+        &:hover:not([disabled]) {
+            background-color: var(--kappel);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-2);
+        }
+
+        &.active {
+            background-color: var(--kappel);
+            color: var(--white);
+            box-shadow: var(--shadow-2);
+        }
+
+        &[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            border-color: var(--gray-web);
+            color: var(--gray-web);
+        }
+
+        ion-icon {
+            font-size: 20px;
+            --ionicon-stroke-width: 40px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .blogs-list {
+        .blogs-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}

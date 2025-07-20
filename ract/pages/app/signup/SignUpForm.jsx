@@ -1,0 +1,348 @@
+/* eslint-disable no-unused-vars */
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { HiEye, HiEyeSlash } from "react-icons/hi2";
+
+// api
+import { userRegister } from "../../../api/user/authUser";
+
+// plugin
+import Toast from "../../../plugin/Toast";
+
+// utils
+import { nameMainColor } from "../../../utils/constants";
+
+// ui
+import SpinnerMini from "../../../ui/spinner/SpinnerMini";
+
+function SignUpForm() {
+    const navigate = useNavigate();
+
+    const [isLoading, setIsLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
+    const [errorsMessage, setErrorsMessage] = useState("");
+    const [emailError, setEmailError] = useState("");
+
+    const {
+        register,
+        getValues,
+        handleSubmit,
+        reset,
+        formState: { errors, disabled },
+    } = useForm();
+
+    const handleSignUp = async ({
+        first_name,
+        last_name,
+        email,
+        password,
+        passwordconfirm,
+    }) => {
+        try {
+            setIsLoading(true);
+
+            if (errors?.root) {
+                return;
+            }
+
+            const { data, error } = await userRegister(
+                first_name,
+                last_name,
+                email,
+                password,
+                passwordconfirm
+            );
+
+            // console.log(`ww`, error);
+            // console.log(`data`, data);
+
+            if (error) {
+                if (error?.message?.email[0]) {
+                    if (
+                        error?.message?.email[0] ===
+                        "user with this email already exists."
+                    ) {
+                        setEmailError(
+                            `تم استخدام هذا البريد الالكتروني من قبل.`
+                        );
+                    }
+
+                    Toast("error", `تم استخدام هذا البريد الالكتروني من قبل.`);
+                    // Toast("error", `${error?.message?.email[0]}.`);
+                    setIsLoading(false);
+                }
+            } else {
+                setIsLoading(true);
+                Toast(
+                    "success",
+                    `${
+                        `تم التسجيل بنجاح! يرجى التحقق من بريدك الإلكتروني لتأكيد حسابك.`
+                        // || data?.message
+                        // "Registration successful! Please check your email to confirm your account."
+                    }`
+                );
+                navigate(`/verifyaccount`);
+            }
+        } catch (error) {
+            console.log(`Error: ${error}`);
+            setIsLoading(false);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    return (
+        <>
+            <form
+                onSubmit={handleSubmit(handleSignUp)}
+                className="space-y-6 flex flex-col gap-8"
+            >
+                {/* First Name */}
+                <div>
+                    <label
+                        htmlFor="first_name"
+                        className="block text-2xl font-bold mb-2 text-black"
+                    >
+                        الاٍسم الاول*
+                    </label>
+                    <input
+                        type="text"
+                        id="first_name"
+                        name="first_name"
+                        placeholder="مثال: محمد"
+                        className={`text-black text-2xl w-full p-2 py-4 border border-gray-300 rounded-md focus:ring-1 focus:border-blue-500 outline-0 `}
+                        {...register("first_name", {
+                            required: `هذا الحقل مطلوب.`,
+                        })}
+                        autoComplete="off"
+                        disabled={isLoading}
+                        required
+                    />
+                    {errors.first_name && (
+                        <p className="text-red-500 text-2xl mt-4">
+                            {errors.first_name.message}
+                        </p>
+                    )}
+                </div>
+
+                {/* Last Name */}
+                <div>
+                    <label
+                        htmlFor="last_name"
+                        className="block text-2xl font-bold mb-2 text-black"
+                    >
+                        الاٍسم الثاني*
+                    </label>
+                    <input
+                        type="text"
+                        id="last_name"
+                        name="last_name"
+                        placeholder="مثال: العمري"
+                        className={`text-black text-2xl w-full p-2 py-4 border border-gray-300 rounded-md focus:ring-1 focus:border-blue-500 outline-0`}
+                        {...register("last_name", {
+                            required: `هذا الحقل مطلوب.`,
+                        })}
+                        autoComplete="off"
+                        disabled={isLoading}
+                        required
+                    />
+                    {errors.last_name && (
+                        <p className="text-red-500 text-2xl mt-4">
+                            {errors.last_name.message}
+                        </p>
+                    )}
+                </div>
+
+                {/* Email */}
+                <div>
+                    <label
+                        htmlFor="email"
+                        className="block text-2xl font-bold mb-2 text-black"
+                    >
+                        البريد الالكتروني*
+                    </label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        dir="ltr"
+                        placeholder="mazen@gmail.com :مثال"
+                        className={`text-black text-2xl w-full p-2 py-4 border border-gray-300 rounded-md focus:ring-1 focus:border-blue-500 outline-0 `}
+                        {...register("email", {
+                            required: `هذا الحقل مطلوب.`,
+                            pattern: {
+                                value: /\S+@\S+\.\S+/,
+                                message: `الرجاء تقديم عنوان بريد إلكتروني صالح.`,
+                            },
+                        })}
+                        // onFocus={(e) => {
+                        //     if (e.target.value === "") {
+                        //         e.target.dir = "ltr";
+                        //         e.target.placeholder = "mazen@gmail.com مثال:";
+                        //     }
+                        // }}
+                        // onBlur={(e) => {
+                        //     if (e.target.value === "") {
+                        //         e.target.dir = "rtl";
+                        //         e.target.placeholder = "مثال: mazen@gmail.com";
+                        //     }
+                        // }}
+                        autoComplete="off"
+                        disabled={isLoading}
+                        required
+                    />
+
+                    {errors.email && (
+                        <p className="text-red-500 text-2xl mt-4">
+                            {errors.email.message}
+                        </p>
+                    )}
+                    {emailError && (
+                        <p className="text-red-500 text-2xl mt-4">
+                            {emailError}
+                        </p>
+                    )}
+                </div>
+
+                {/* Password */}
+                <div>
+                    <label
+                        htmlFor="password"
+                        className="block text-2xl font-bold mb-2 text-black relative"
+                    >
+                        كلمة المرور*
+                    </label>
+                    <div className="flex items-stretch w-full group ">
+                        <input
+                            type={!showPassword ? "password" : "text"}
+                            id="password"
+                            name="password"
+                            dir="ltr"
+                            placeholder="أكتب كلمة المرور"
+                            className={`text-black text-2xl w-full p-2 py-4 border border-gray-300 rounded-md focus:border-blue-500 outline-0 focus:border-l-transparent focus:border-l-0 border-l-0 border-l-transparent `}
+                            {...register("password", {
+                                required: `هذا الحقل مطلوب.`,
+                                minLength: {
+                                    value: 8,
+                                    message: `كلمة المرور تحتاج إلى 8 أحرف على الأقل.`,
+                                },
+                            })}
+                            autoComplete="off"
+                            disabled={isLoading}
+                            required
+                        />
+                        {!showPassword ? (
+                            <HiEye
+                                size={16}
+                                className={`flex items-center justify-center cursor-pointer h-full 
+                                    max-w-14 min-w-12 pe-2 py-4 border border-gray-300 
+                                    border-r-transparent  border-s-transparent border-r-0 border-s-0 rounded-md bg-gray-50 transition-all
+                                    duration-500 hover:text-blue-500  
+                                    
+                                    group-focus-within:border-blue-500
+                                    outline-0 group-focus-within:border-s-0
+                                    group-focus-within:border-r-0
+                                    `}
+                                onClick={() => {
+                                    setShowPassword((show) => !show);
+                                }}
+                                // title="x"
+                            />
+                        ) : (
+                            <HiEyeSlash
+                                size={16}
+                                className={`flex items-center justify-center cursor-pointer h-full 
+                                    max-w-14 min-w-12 pe-2 py-4 border border-gray-300 
+                                    border-r-transparent  border-s-transparent border-r-0 border-s-0 rounded-md bg-gray-50 transition-all
+                                    duration-500 hover:text-blue-500  
+                                    
+                                    group-focus-within:border-blue-500
+                                    outline-0 group-focus-within:border-s-0
+                                    group-focus-within:border-r-0
+                                    `}
+                                onClick={() => {
+                                    setShowPassword((show) => !show);
+                                }}
+                            />
+                        )}
+                    </div>
+
+                    {errors.password && (
+                        <p className="text-red-500 text-2xl mt-4">
+                            {errors.password.message}
+                        </p>
+                    )}
+                </div>
+
+                {/* Confirm Password */}
+                <div>
+                    <label
+                        htmlFor="passwordconfirm"
+                        className="block text-2xl font-bold mb-2 text-black"
+                    >
+                        اٍعادة كلمة المرور*
+                    </label>
+                    <input
+                        type={!showPassword ? "password" : "text"}
+                        id="passwordconfirm"
+                        name="passwordconfirm"
+                        dir="ltr"
+                        placeholder="أعد اٍدخال كلمة المرور"
+                        className={`text-black text-2xl w-full p-2 py-4 border border-gray-300 rounded-md focus:ring-1 focus:border-blue-500 outline-0 `}
+                        {...register("passwordconfirm", {
+                            required: `هذا الحقل مطلوب.`,
+                            minLength: {
+                                value: 8,
+                                message: `كلمة المرور تحتاج إلى 8 أحرف على الأقل.`,
+                            },
+                            validate: (value) =>
+                                value === getValues()?.password ||
+                                // `Passwords need to match`,
+                                `كلمات المرور يجب أن تتطابق.`,
+                            // value: "mazen",
+                        })}
+                        autoComplete="off"
+                        disabled={isLoading}
+                        required
+                    />
+
+                    {errors.passwordconfirm && (
+                        <p className="text-red-500 text-2xl mt-4">
+                            {errors.passwordconfirm.message}
+                        </p>
+                    )}
+                </div>
+
+                {/* Actions */}
+                <div
+                    className="flex items-center justify-center gap-6 mb-8"
+                    data-aos="fade-down"
+                >
+                    <button
+                        className="btn has-before"
+                        type="submit"
+                        disabled={isLoading}
+                        data-aos="fade-left"
+                    >
+                        {isLoading ? <SpinnerMini /> : `الاٍشتراك`}
+                    </button>
+
+                    <button
+                        className="btn has-before"
+                        type="reset"
+                        disabled={isLoading}
+                        onClick={() => {
+                            navigate(`/login`);
+                        }}
+                        data-aos="fade-left"
+                    >
+                        {`إلغاء`}
+                    </button>
+                </div>
+            </form>
+        </>
+    );
+}
+
+export default SignUpForm;

@@ -1,0 +1,152 @@
+/* Start Contact Us */
+.conatct-us {
+    // background-color: white;
+    // padding: 120px 0 50px;
+
+    .container {
+        // position: relative;
+
+        .box {
+            // display: flex;
+            // align-items: center;
+            // justify-content: space-between;
+            // padding-top: 7px;
+            // gap: 50px;
+
+            // @media (max-width: 1125px) {
+            //     flex-direction: column;
+            //     align-items: center;
+            // }
+
+            // > div {
+            //     flex: 1;
+            // }
+
+            .content {
+                .content-title {
+                    max-width: 400px;
+
+                    h3 {
+                        font-size: 22px;
+                        margin-top: 50px;
+                        margin-bottom: 20px;
+
+                        span {
+                            color: var(--secondery-color);
+                        }
+                    }
+
+                    p {
+                        font-size: 15px;
+                        color: #787878;
+                        line-height: 1.5;
+                        margin-bottom: 30px;
+                    }
+                }
+
+                // .form {
+                //     .input-box {
+                //         width: 100%;
+                //         flex: 1;
+                //         margin-bottom: 20px;
+
+                //         &:focus {
+                //             font-size: 5px;
+                //             color: red;
+                //         }
+                //     }
+
+                //     span {
+                //         color: red;
+                //         font-size: 10px;
+                //         margin-top: 5px;
+                //     }
+
+                //     label {
+                //         font-size: 13px;
+                //         display: block;
+                //         margin-bottom: 10px;
+                //     }
+
+                //     .input,
+                //     .message,
+                //     textarea {
+                //         width: 100%;
+                //         background-color: #f9fafc;
+                //         border: none;
+                //         border: 1px solid #dedada;
+                //         padding: 10px 15px;
+                //         outline: none;
+                //     }
+
+                //     .message,
+                //     textarea {
+                //         margin-bottom: 20px;
+                //     }
+
+                //     .input::placeholder,
+                //     .message::placeholder {
+                //         font-size: 12px;
+                //         color: #787878;
+                //     }
+
+                //     textarea {
+                //         font-size: 12px;
+                //         color: #787878;
+                //         resize: none;
+                //     }
+                // }
+
+                // .btn {
+                //     margin-top: 10px;
+
+                //     button {
+                //         background-color: var(--secondery-color);
+                //         border: 1px solid transparent;
+                //         border: none;
+                //         color: white;
+                //         padding: 15px 30px;
+                //         font-size: 14px;
+                //         font-weight: 600;
+                //         border-radius: 30px;
+                //         cursor: pointer;
+                //         transition: var(--main-transition);
+
+                //         &:hover {
+                //             background-color: #d612bc;
+                //         }
+                //     }
+                // }
+            }
+
+            .image {
+                img {
+                    width: 500px;
+
+                    @media (max-width: 767px) {
+                        width: 350px;
+                    }
+                }
+            }
+        }
+    }
+
+    // @media (max-width: 767px) {
+    //     padding-bottom: 0;
+    // }
+}
+
+.conatct-us #messageUser,
+.conatct-us #messageEmail,
+.conatct-us #titleMessage,
+.conatct-us #messageofmessage {
+    display: none;
+}
+
+#messageofmessage,
+#titleMessage {
+    margin-top: -15px;
+    display: block;
+    margin-bottom: 13px;
+}
+/* End Contact Us */

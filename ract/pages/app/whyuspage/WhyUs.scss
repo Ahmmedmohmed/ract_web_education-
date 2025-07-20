@@ -1,0 +1,64 @@
+/* start Why Us */
+.why-us {
+    padding: 110px 0;
+    background-color: white;
+
+    .container {
+        .why-us-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 80px;
+            z-index: 999;
+
+            @media (max-width: 1125px) {
+                flex-direction: column;
+            }
+
+            img {
+                max-width: 450px;
+
+                @media (max-width: 767px) {
+                    max-width: 280px;
+                }
+            }
+
+            .boxes {
+                .box {
+                    display: flex;
+                    gap: 20px;
+                    background-color: rgb(244 255 255);
+                    border-radius: 5px;
+                    padding: 20px;
+                    margin: 20px 0;
+                    cursor: pointer;
+
+                    .text {
+                        max-width: 500px;
+
+                        h3 {
+                            color: #103a4a;
+
+                            @media (max-width: 767px) {
+                                font-size: 17px;
+                            }
+                        }
+
+                        p {
+                            margin-top: 10px;
+                            line-height: 1.8;
+                            color: var(--thrid-color);
+
+                            @media (max-width: 767px) {
+                                font-size: 11px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* End Why Us */

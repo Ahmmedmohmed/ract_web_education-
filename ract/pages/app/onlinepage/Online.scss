@@ -1,0 +1,71 @@
+/* Start Study Online */
+.online {
+    padding: 110px 0;
+    background-color: var(--section-bg);
+
+    .container {
+        .online-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 60px;
+
+            @media (max-width: 1125px) {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .image {
+                img {
+                    max-width: 350px;
+
+                    @media (max-width: 767px) {
+                        max-width: 220px;
+                    }
+                }
+            }
+
+            .content {
+                max-width: 600px;
+
+                .title {
+                    @media (max-width: 767px) {
+                        font-size: 18px;
+                    }
+                }
+
+                p {
+                    font-size: 19px;
+                    color: var(--thrid-color);
+                    line-height: 1.8;
+
+                    @media (max-width: 767px) {
+                        font-size: 15px;
+                    }
+                }
+
+                .btn {
+                    margin-top: 28px;
+
+                    a {
+                        background-color: var(--secondery-color);
+                        color: white;
+                        border: 1px solid transparent;
+                        padding: 10px 30px;
+                        margin-top: 80px;
+                        border-radius: 30px;
+                        font-size: 12px;
+                        font-weight: 600;
+                        transition: var(--main-transition);
+
+                        &:hover {
+                            background-color: #d612bc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* End Study Online */

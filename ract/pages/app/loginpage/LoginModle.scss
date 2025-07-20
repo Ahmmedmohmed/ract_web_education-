@@ -1,0 +1,267 @@
+/* Start Login Page */
+.login {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(33, 33, 33, 0.548);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .form {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    padding-bottom: 40px;
+    transform: scale(0);
+    transition: var(--main-transition);
+}
+
+@media (max-width: 767px) {
+    .login .form {
+        width: 300px;
+    }
+}
+
+.login .form #close {
+    position: absolute;
+    font-size: 20px;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+@media (max-width: 767px) {
+    .login .form #close {
+        font-size: 17px;
+    }
+}
+
+.login .form #close:hover {
+    transform: rotate(180deg);
+}
+
+.login .form .logo,
+.subscribe .form .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.login .form .logo a,
+.subscribe .form .logo a {
+    color: var(--secondery-color);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.login .form .logo span,
+.subscribe .form .logo span {
+    color: #00a9ce;
+}
+
+.login .form .paragraph,
+.subscribe .form .paragraph {
+    font-size: 17px;
+    color: var(--thrid-color);
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+    .login .form .paragraph,
+    .subscribe .form .paragraph {
+        font-size: 13px;
+        text-align: center;
+    }
+}
+
+.login .form form .input,
+.subscribe .form form .input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 13px;
+    padding: 11px 16px;
+    background-color: #f9fafc;
+    /* border: 1px solid #dedada; */
+    border: none;
+    outline: none;
+}
+
+@media (max-width: 767px) {
+    .login .form form .input,
+    .subscribe .form form .input {
+        font-size: 12px;
+    }
+}
+
+.login .form form .btn,
+.subscribe .form form .btn {
+    margin-top: 40px;
+}
+
+.login .form form .btn button,
+.subscribe .form form .btn button {
+    background-color: var(--secondery-color);
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .login .form form .btn button,
+    .subscribe .form form .btn button {
+        font-size: 13px;
+    }
+}
+
+.login .form form .btn .subs,
+.subscribe .form form .btn .subs {
+    background-color: transparent;
+    color: var(--secondery-color);
+    border: 1px solid var(--secondery-color);
+    text-align: center;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 14px;
+    width: 100%;
+    cursor: pointer;
+    display: block;
+}
+
+.login .form form .info a {
+    font-size: 15px;
+    color: var(--secondery-color);
+}
+
+@media (max-width: 767px) {
+    .login .form form .info a {
+        font-size: 13px;
+    }
+}
+
+.login .form form .p,
+.subscribe .form form .p {
+    font-size: 15px;
+    color: var(--thrid-color);
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+    .login .form form .p {
+        font-size: 13px;
+    }
+}
+
+.login #messageemail,
+.login #messagemot {
+    display: none;
+    color: red;
+    font-size: 10px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Start Corect Login */
+.corect-login {
+    width: 350px;
+    height: 224px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -175px;
+    margin-top: -112px;
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: 0px 1px 12px #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    transform: scale(0);
+    transition: var(--main-transition);
+}
+
+@media (max-width: 767px) {
+    .corect-login {
+        width: 250px;
+        height: 190px;
+        margin-left: -125px;
+        margin-top: -95px;
+    }
+}
+
+.corect-login .icon {
+    text-align: center;
+}
+
+.corect-login .icon i {
+    color: white;
+    background-color: #04aa6d;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 19px;
+}
+
+@media (max-width: 767px) {
+    .corect-login .icon i {
+        font-size: 15px;
+        padding: 9px;
+    }
+}
+
+.corect-login h3 {
+    text-align: center;
+    margin: 15px 0;
+}
+
+@media (max-width: 767px) {
+    .corect-login h3 {
+        font-size: 14px;
+    }
+}
+
+.corect-login .pargraph {
+    line-height: 1.8;
+}
+
+@media (max-width: 767px) {
+    .corect-login .pargraph {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}
+
+.corect-login .btn {
+    margin-top: 23px;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .corect-login .btn {
+        margin-top: 20px;
+    }
+}
+
+.corect-login #okay {
+    cursor: pointer;
+    background-color: var(--secondery-color);
+    color: white;
+    border: 1px solid transparent;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 12px;
+    margin: -15px auto;
+}
+/* End Corect Login */
+/* End Login Page */

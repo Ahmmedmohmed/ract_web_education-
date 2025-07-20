@@ -1,0 +1,105 @@
+/* Strat Question Section */
+.question {
+    padding: 100px 0;
+
+    .container {
+        .question-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+
+            @media (max-width: 1125px) {
+                flex-direction: column;
+            }
+
+            .content {
+                width: 500px;
+
+                @media (max-width: 1125px) {
+                    max-width: 100%;
+                    text-align: center;
+                }
+
+                p {
+                    color: var(--thrid-color);
+                    font-size: 15px;
+                    line-height: 1.8;
+                }
+
+                a {
+                    background-color: var(--secondery-color);
+                    color: white;
+                    border-radius: 30px;
+                    border: 1px solid transparent;
+                    padding: 10px 30px;
+                    display: inline-block;
+                    margin-top: 20px;
+                }
+            }
+
+            .text {
+                flex: 1;
+
+                .quest {
+                    cursor: pointer;
+
+                    .questBox {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        background-color: var(--secondery-color);
+                        border: 2px solid var(--secondery-color);
+                        color: white;
+                        padding: 10px;
+                        margin-bottom: -23px;
+
+                        p {
+                            font-size: 15px;
+                        }
+
+                        svg {
+                            color: white;
+                            cursor: pointer;
+                            transition: var(--main-transition);
+
+                            &.saber {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+
+                    .content-box {
+                        padding: 10px;
+                        border: 2px solid var(--secondery-color);
+                        color: var(--thrid-color);
+                        line-height: 1.8;
+                        height: 0;
+                        opacity: 0;
+                        transition: opacity 10s;
+                        transition: height var(--main-transition);
+                        overflow: hidden;
+                        position: relative;
+                        z-index: -1;
+
+                        &.open {
+                            opacity: 1;
+                        }
+
+                        p {
+                            padding: 10px;
+                            margin-bottom: -10px;
+                            font-size: 15px;
+                        }
+
+                        a {
+                            color: var(--secondery-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* End Question Section */

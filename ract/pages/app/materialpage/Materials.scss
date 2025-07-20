@@ -1,0 +1,206 @@
+/* Start Cours Section */
+.cours {
+    // padding-top: calc(var(--padding-top) - 50px);
+    // padding-bottom: var(--padding-bottom);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    position: relative;
+
+    .container {
+        h4 {
+            padding-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+
+            @media (max-width: 767px) {
+                font-size: 10px;
+            }
+        }
+
+        .mawad {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-block: 30px;
+
+            .mada {
+                font-size: 14px;
+                font-weight: bold;
+                border: 2px solid var(--main-color);
+                border-radius: 12px;
+                padding: 8px;
+                cursor: pointer;
+                transition: var(--main-transition);
+
+                @media (max-width: 767px) {
+                    font-size: 7px;
+                }
+
+                &.active {
+                    background-color: var(--main-color);
+                    color: white;
+                }
+
+                &:hover {
+                    background-color: var(--main-color);
+                    color: white;
+                }
+            }
+        }
+
+        .arabic {
+            opacity: 0;
+            // position: absolute;
+            // left: 0;
+            // right: 0;
+            padding-right: 25px;
+            padding-left: 25px;
+            // padding-bottom: 100px;
+            transition: 0.8s;
+
+            &.active-arabic {
+                opacity: 1 !important;
+                z-index: 5;
+            }
+
+            .teachersbox {
+                // padding-top: var(--padding-top);
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+                gap: 30px;
+
+                @media (max-width: 767px) {
+                    grid-template-columns: 1fr;
+                }
+
+                .teachearbox {
+                    background-color: white;
+                    box-shadow: 0 2px 4px #08314469;
+                    border-radius: 7px;
+                    padding: 17px;
+                    cursor: pointer;
+                    transition: var(--main-transition);
+                    
+                    &:hover {
+                        box-shadow: 0 2px 4px #ec00ff;
+                        color: white;
+                        background-color: var(--secondery-color);
+                        transition: var(--main-transition);
+                    }
+
+                    .teachercontent {
+                        display: flex;
+                        align-items: center;
+                        // justify-content: space-around;
+                        justify-content: start;
+
+                        @media (max-width: 767px) {
+                            flex-direction: column;
+                            text-align: center;
+                        }
+
+                        .teacherImage {
+                            img {
+                                width: 130px;
+                                border: 3px solid var(--secondery-color);
+                                border-radius: 35px;
+
+                                @media (max-width: 767px) {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover .teacherImage img {
+                        border-color: white;
+                    }
+
+                    .teacherInfo {
+                        margin-right: 20px;
+
+                        @media (max-width: 767px) {
+                            margin-top: 10px;
+                        }
+
+                        h3 {
+                            font-size: 15px;
+                            margin-bottom: 10px;
+                        }
+
+                        p {
+                            font-size: 13px;
+                            line-height: 1.8;
+
+                            @media (max-width: 767px) {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+
+                    &:hover p {
+                        color: white;
+                    }
+
+                    .teachersContect {
+                        margin-top: 15px;
+                        border-top: 1px solid var(--main-color);
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .group {
+                            h3 {
+                                font-size: 16px;
+                                margin-top: 10px;
+
+                                @media (max-width: 767px) {
+                                    font-size: 12px;
+                                }
+                            }
+
+                            p {
+                                font-size: 12px;
+                                @media (max-width: 767px) {
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover .group h3,
+                    &:hover .teacherContact h3 {
+                        color: white;
+                    }
+
+                    &:hover .title::before {
+                        background-color: var(--main-color);
+                    }
+
+                    &:hover .group p {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .cours .teachersContect .group h3,
+// .cours .teachersContect .teacherContact h3 {
+//     font-size: 16px;
+//     margin-top: 10px;
+// }
+
+// @media (max-width: 767px) {
+//     .cours .teachersContect .group h3,
+//     .cours .teachersContect .teacherContact h3 {
+//         font-size: 12px;
+//     }
+// }
+
+.cours .teachersContect .group p {
+    font-size: 12px;
+}
+/* End Cours Section */

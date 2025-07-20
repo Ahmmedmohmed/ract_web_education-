@@ -1,0 +1,83 @@
+.video {
+    background-image: url(../../../../assets/images/video/video-bg.png);
+    background-size: contain;
+    background-position: center top;
+    background-repeat: repeat-x;
+
+    .container {
+        .video-card {
+            @media (min-width: 1200px) {
+                position: relative;
+            }
+
+            .video-banner {
+                position: relative;
+                border-top-right-radius: 80px;
+                border-bottom-left-radius: 120px;
+
+                &::after {
+                    inset: 0;
+                    background-color: var(--black_30);
+                }
+
+                @media (min-width: 992px) {
+                    max-width: 75%;
+                    margin-inline: auto;
+                }
+
+                .img-cover {
+                    min-height: 550px;
+                }
+
+                .play-btn {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: var(--radical-red);
+                    font-size: 30px;
+                    padding: 16px;
+                    color: var(--white);
+                    border-radius: var(--radius-circle);
+                    box-shadow: 0 0 0 0 var(--white_50);
+                    z-index: 1;
+                    animation: pulse 3s ease infinite;
+
+                    @media (min-width: 575px) {
+                        padding: 25px;
+                    }
+                }
+            }
+
+            // .shape {
+            //     // position: relative;
+            //     display: block;
+            // }
+
+            .video-shape-1 {
+                @media (min-width: 1200px) {
+                    top: -50px;
+                    left: 0;
+                }
+            }
+
+            .video-shape-2 {
+                @media (min-width: 1200px) {
+                    top: -80px;
+                    right: 120px;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--white_50);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px transparent;
+    }
+}

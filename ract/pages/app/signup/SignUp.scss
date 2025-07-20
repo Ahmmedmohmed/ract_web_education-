@@ -1,0 +1,144 @@
+/* Start Subscribe page */
+.info-tasjil {
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+
+    .container {
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding-top: 7px;
+
+            @media (max-width: 1125px) {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content {
+                width: 100%;
+
+                .content-title {
+                    // max-width: 400px;
+
+                    h3 {
+                        font-size: 22px;
+                        margin-top: 50px;
+                        margin-bottom: 20px;
+                        /* background-color: ; */
+
+                        span {
+                            color: var(--secondery-color);
+                        }
+                    }
+
+                    p {
+                        font-size: 15px;
+                        color: #787878;
+                        line-height: 1.5;
+                        margin-bottom: 30px;
+                    }
+                }
+
+                // .form {
+                //     width: 100%;
+
+                //     form {
+                //         .input-box {
+                //             width: 100%;
+                //             flex: 1;
+                //             margin-bottom: 20px;
+
+                //             label {
+                //                 font-size: 13px;
+                //                 display: block;
+                //                 margin-bottom: 10px;
+                //             }
+
+                //             .input,
+                //             .message,
+                //             textarea {
+                //                 width: 100%;
+                //                 background-color: #f9fafc;
+                //                 border: none;
+                //                 border: 1px solid #dedada;
+                //                 padding: 10px 15px;
+                //                 outline: none;
+                //             }
+
+                //             .message,
+                //             textarea {
+                //                 margin-bottom: 20px;
+                //             }
+
+                //             .input::placeholder,
+                //             .message::placeholder {
+                //                 font-size: 12px;
+                //                 color: #787878;
+                //             }
+
+                //             textarea {
+                //                 font-size: 12px;
+                //                 color: #787878;
+                //                 resize: none;
+                //             }
+
+                //             span {
+                //                 color: red;
+                //                 font-size: 12px;
+                //                 display: block;
+                //                 margin-top: -10px;
+                //                 display: none;
+                //             }
+
+                //             input {
+                //                 max-width: 100%;
+
+                //                 @media (min-width: 767px) {
+                //                     width: 120% !important;
+                //                 }
+                //             }
+                //         }
+                //     }
+                // }
+
+                // .btn {
+                //     margin-top: 10px;
+
+                //     button {
+                //         background-color: #c009a8;
+                //         border: 1px solid transparent;
+                //         border: none;
+                //         color: white;
+                //         padding: 15px 30px;
+                //         font-size: 14px;
+                //         font-weight: 600;
+                //         border-radius: 30px;
+                //         cursor: pointer;
+                //         transition: var(--main-transition);
+
+                //         &:hover {
+                //             background-color: #d612bc;
+                //         }
+                //     }
+                // }
+            }
+
+            .image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                    width: 500px;
+
+                    @media (max-width: 767px) {
+                        width: 350px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* End Subscribe page */
